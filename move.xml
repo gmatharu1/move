@@ -1,7 +1,37 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="robot_delay" id="158" inline="true" x="-138" y="38"></block>
   <block type="oled_cleardisplay" id="139" x="-229" y="91"></block>
-  <block type="controls_whileUntil" id="182" inline="false" x="125" y="75">
+  <block type="oled_linerect" id="398" x="-370" y="116">
+    <field name="OBJECT">LINE</field>
+  </block>
+  <block type="oled_cleardisplay" id="321" x="54" y="163">
+    <next>
+      <block type="oled_setcursor" id="336" inline="true">
+        <value name="STARTX">
+          <block type="math_number" id="367">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <value name="STARTY">
+          <block type="math_number" id="374">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <next>
+          <block type="oled_drawtext" id="407">
+            <field name="TEXT">Yo Wadsup?</field>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="multimedia_volume" id="273" x="305" y="159">
+    <field name="VOLUME">LOW</field>
+  </block>
+  <block type="multimedia_playwav" id="261" x="-218" y="256">
+    <field name="WAV"></field>
+  </block>
+  <block type="controls_whileUntil" id="182" inline="false" x="404" y="311">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
       <block type="sensor_button" id="221">
@@ -29,15 +59,5 @@
         </next>
       </block>
     </statement>
-    <next>
-      <block type="multimedia_volume" id="273">
-        <field name="VOLUME">LOW</field>
-        <next>
-          <block type="multimedia_playwav" id="261">
-            <field name="WAV"></field>
-          </block>
-        </next>
-      </block>
-    </next>
   </block>
 </xml>
