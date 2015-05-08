@@ -1,17 +1,40 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="movement_forward" id="10" x="51" y="7">
-    <next>
-      <block type="robot_delay" id="63" inline="true">
-        <value name="DELAY">
-          <block type="math_number" id="70">
-            <field name="NUM">5000</field>
-          </block>
-        </value>
+  <block type="robot_delay" id="158" inline="true" x="-138" y="38"></block>
+  <block type="oled_cleardisplay" id="139" x="-229" y="91"></block>
+  <block type="controls_whileUntil" id="182" inline="false" x="125" y="75">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="221">
+        <field name="OBJECT">UP</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="movement_forward" id="10">
         <next>
-          <block type="movement_stop" id="80">
+          <block type="robot_delay" id="63" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="70">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
             <next>
-              <block type="oled_cleardisplay" id="139"></block>
+              <block type="led_select" id="167" inline="true">
+                <field name="ACTION">FLASH</field>
+                <next>
+                  <block type="movement_stop" id="80"></block>
+                </next>
+              </block>
             </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="multimedia_volume" id="273">
+        <field name="VOLUME">LOW</field>
+        <next>
+          <block type="multimedia_playwav" id="261">
+            <field name="WAV"></field>
           </block>
         </next>
       </block>
